@@ -11,34 +11,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
-          with:
-            ref: lab05_master
 
         - name: build banking
           shell: bash
-          run: |
-            cd banking
-            cmake -H. -B_build
-            cmake --build _build
-          
-  Testing:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: update
-        run:  |
-          git submodule update --init
-          sudo apt install lcov
-          sudo apt install g++-7
-      - name: test
-        shell: bash
-        run: |
-          mkdir _build && cd _build
-          CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
-          cmake --build .
-          ./RunTest
-          lcov -t "banking" -o lcov.info -c -d .
-          lcov --remove lcov.info '/home/runner/work/uwu/third-party/gtest/*' -o lcov.info
-          lcov --remove lcov.info '/usr/include/*' -o lcov.info
-          
+          run: 
+            cmake -H. -B_build && cmake --build _build
