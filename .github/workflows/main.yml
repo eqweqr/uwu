@@ -64,7 +64,7 @@ jobs:
       - name: CovBeg
         uses: coverallsapp/github-action@master
         with:
-          github-token: xJwxb8BJo3K0rKXUJjyHFBSlz2oCurLbr
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           path-to-lcov: ./_build/lcov.info
           coveralls-endpoint: https://coveralls.io
