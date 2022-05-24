@@ -3,7 +3,7 @@ name: Lab05_
 on:
   push:
     branches:
-      - main
+      - master
       
 jobs:
 
