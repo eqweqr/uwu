@@ -39,7 +39,7 @@ jobs:
           lcov --remove lcov.info '/home/runner/work/uwu/uwu/third-party/gtest/*' -o lcov.info
           lcov --remove lcov.info '/usr/include/*' -o lcov.info
 
-   CovTest:
+  CovTest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
