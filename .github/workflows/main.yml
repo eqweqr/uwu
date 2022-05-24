@@ -24,6 +24,7 @@ jobs:
       
       - name: update
         run:  |
+          git submodule update --init
           git submodule update --recursive --remote
           sudo apt install lcov
           sudo apt install g++-7
